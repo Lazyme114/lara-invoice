@@ -97,8 +97,8 @@
 							</div>
 							<div class="row clearfix">
 								<div class="col-md-12">
-									<button id="add_row" class="btn btn-primary float-left">Add Row</button>
-									<button id='delete_row' class="float-right btn btn-danger">Delete Row</button>
+									<button id="add_row" type="button" class="btn btn-primary float-left">Add Row</button>
+									<button id='delete_row' type="button" class="float-right btn btn-danger">Delete Row</button>
 								</div>
 							</div>
 							<div class="row clearfix" style="margin-top:20px">
