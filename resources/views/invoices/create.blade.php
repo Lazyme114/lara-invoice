@@ -108,7 +108,7 @@
 											<tbody>
 												<tr>
 													<th class="text-center">Sub Total</th>
-													<td class="text-center"><input type="number" name='sub_total' placeholder='0.00' class="form-control" id="sub_total" readonly/></td>
+													<td class="text-center"><input type="number" name='invoice[tax_percent]' placeholder='0.00' class="form-control" id="sub_total" readonly/></td>
 												</tr>
 												<tr>
 													<th class="text-center">Tax</th>
