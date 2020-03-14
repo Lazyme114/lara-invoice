@@ -24,37 +24,14 @@
 							<div class="row clearfix" style="margin-top: 20px;">
 								<div class="col-md-12">
 									<div class="float-left col-md-6">
-										<b>Customer Details</b>
-										<br /><br />
-										Name*: <input type="text" name="customer[name]" class="form-control" required />
-										Address*: <input type="text" name="customer[address]" class="form-control" required />
-										Postcode/ZIP: <input type="text" name="customer[postcode]" class="form-control" />
-										City*: <input type="text" name="customer[city]" class="form-control" required />
-										State: <input type="text" name="customer[state]" class="form-control" />
-										Country*: <input type="text" name="customer[country]" class="form-control" required />
-										Phone: <input type="text" name="customer[phone]" class="form-control" />
-										Email: <input type="text" name="customer[email]" class="form-control" />
+										Choose customer:
 										<br />
-										<b>Additional Fields</b>(optional):
-										<br />
-										<table class="table table-bordered table-hover">
-											<tbody>
-												<tr>
-													<th class="text-center" width="50%">Field</th>
-													<th class="text-center">Value</th>
-												</tr>
-												@for($i = 0; $i <= 2; $i++)
-												<tr>
-													<td class="text-center">
-														<input type="text" name="customer_fields[{{ $i }}][field_key]" class="form-control">
-													</td>
-													<td>
-														<input type="text" name="customer_fields[{{ $i }}][field_value]" class="form-control">
-													</td>
-												</tr>
-												@endfor
-											</tbody>
-										</table>
+										<select name="invoice[customer_id]" id="customer_id" class="form-control" required>
+											<option value="">Select Customer</option>
+											@foreach($customers as $customer)
+											<option value="{{ $customer->id }}">{{ $customer->name }}</option>
+											@endforeach
+										</select>
 									</div>
 									<div class="float-right col-md-4">
 										<b>Seller details</b>

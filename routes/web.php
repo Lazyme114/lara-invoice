@@ -25,6 +25,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware(['auth'])->group(function() {
 
 	Route::resource('invoices', "InvoiceController");
+	Route::resource('customers', "CustomerController");
+	Route::resource('products', "ProductController");
 
 	Route::get('invoices/{invoice_id}/download', 'InvoiceController@download')->name('invoices.download');
 
