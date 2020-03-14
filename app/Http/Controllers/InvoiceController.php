@@ -5,6 +5,7 @@ use App\Customer;
 use App\CustomerField;
 use App\Invoice;
 use App\InvoicesItem;
+use App\Product;
 
 use Illuminate\Http\Request;
 
@@ -13,7 +14,8 @@ class InvoiceController extends Controller
 	public function create()
 	{
 		$customers = Customer::get(['id', 'name']);
-		return view('invoices.create', compact('customers'));
+		$products = Product::all();
+		return view('invoices.create', compact('customers', 'products'));
 	}
 
 	public function store(Request $request)

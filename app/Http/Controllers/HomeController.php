@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Invoice;
+use DB;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,4 +28,5 @@ class HomeController extends Controller
         $invoices = Invoice::with('customer')->get();
         return view('home', compact('invoices'));
     }
+
 }

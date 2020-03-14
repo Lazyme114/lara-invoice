@@ -10,5 +10,6 @@ return [
 		'additional_info' => [
 			'VAT Number' => 'XX XXX XXX'
 		]
-	]
+	],
+	'currency' => '$'
 ];

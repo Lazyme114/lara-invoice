@@ -55,14 +55,21 @@
 												<th class="text-center"> # </th>
 												<th class="text-center"> Product </th>
 												<th class="text-center"> Qty </th>
-												<th class="text-center"> Price </th>
+												<th class="text-center"> Price ( {{ config('invoices.currency') }} ) </th>
 												<th class="text-center"> Total </th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr id='addr0'>
 												<td>1</td>
-												<td><input type="text" name='product[]'  placeholder='Enter Product Name' class="form-control"/></td>
+												<td>
+													<select name="product[]" id="" class="form-control product_select" required>
+														<option value="">Select Product</option>
+														@foreach($products as $product)
+														<option value="{{ $product->id }}">{{ $product->name }}</option>
+														@endforeach
+													</select>
+												</td>
 												<td><input type="number" name='qty[]' placeholder='Enter Qty' class="form-control qty" step="0" min="0"/></td>
 												<td><input type="number" name='price[]' placeholder='Enter Unit Price' class="form-control price" step="0.00" min="0"/></td>
 												<td><input type="number" name='total[]' placeholder='0.00' class="form-control total" readonly/></td>
@@ -120,6 +127,15 @@
 
 @section('scripts')
 <script>
+
+	$(document).ready(function(){
+		$(".product_select").change(function() {
+			let product_id = $(this).val();
+			alert(product_id);
+		});
+	});
+
+
 	$(document).ready(function(){
 		var i=1;
 		$("#add_row").click(function(){b=i-1;
