@@ -5,6 +5,7 @@ use App\Customer;
 use App\CustomerField;
 use App\Invoice;
 use App\InvoicesItem;
+
 use Illuminate\Http\Request;
 
 class InvoiceController extends Controller
@@ -48,5 +49,12 @@ class InvoiceController extends Controller
 	{
 		$invoice = Invoice::findOrFail($invoice_id);
 		return view('invoices.show', compact('invoice'));
+	}
+
+	public function download($invoice_id)
+	{
+		$invoice = Invoice::findOrFail($invoice_id);
+		$pdf = \PDF::loadView('invoices.pdf', compact('invoice'));
+		return $pdf->stream('invoide.pdf');
 	}
 }

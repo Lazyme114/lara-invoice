@@ -26,6 +26,8 @@ Route::middleware(['auth'])->group(function() {
 
 	Route::resource('invoices', "InvoiceController");
 
+	Route::get('invoices/{invoice_id}/download', 'InvoiceController@download')->name('invoices.download');
+
 	Route::get('user/profile', function() {
 
 	});

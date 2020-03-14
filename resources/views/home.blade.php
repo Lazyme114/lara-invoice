@@ -46,6 +46,7 @@
 								</td>
 								<td>
 									<a href="{{ route('invoices.show', $invoice->id) }}" class="btn btn-info btn-xs">View Invoice</a>
+									<a href="{{ route('invoices.download', $invoice->id) }}" class="btn btn-info btn-xs">Download PDF</a>
 								</td>
 							</tr>
 							@endforeach
