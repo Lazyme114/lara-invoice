@@ -108,12 +108,12 @@
 											<tbody>
 												<tr>
 													<th class="text-center">Sub Total</th>
-													<td class="text-center"><input type="number" name='invoice[tax_percent]' placeholder='0.00' class="form-control" id="sub_total" readonly/></td>
+													<td class="text-center"><input type="number" placeholder='0.00' class="form-control" id="sub_total" readonly/></td>
 												</tr>
 												<tr>
 													<th class="text-center">Tax</th>
 													<td class="text-center"><div class="input-group mb-2 mb-sm-0">
-														<input type="number" class="form-control" id="tax" placeholder="0">
+														<input type="number" name='invoice[tax_percent]' class="form-control" id="tax" placeholder="0">
 														<div class="input-group-addon">%</div>
 													</div></td>
 												</tr>
